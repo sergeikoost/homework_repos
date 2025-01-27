@@ -46,7 +46,12 @@ WARN[0000] Found multiple config files with supported names: /tmp/netology/docke
 WARN[0000] Using /tmp/netology/docker/task5/compose.yaml
 
 
-Запускаться будет только compose.yaml в котором не указано, что необходимо использовать еще один файл. Это можно исправить добавив в файл compose.yaml строчки чтобы включить другой compose файл:
+Запускаться будет только compose.yaml в котором не указано, что необходимо использовать еще один файл. 
+
+Шаг2:
+
+
+Это можно исправить добавив в файл compose.yaml строчки чтобы включить другой compose файл:
 
 
 include:
