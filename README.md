@@ -96,3 +96,18 @@ include:
 
 ![Задача 5, пункт 7](https://github.com/user-attachments/assets/0f283c98-d92f-462b-8908-5e9db5673b7c)
 
+
+Исправил ошибку `docker compose up -d`, отредактировав файл `docker-compose.yaml`:
+    ```yaml
+    version: "3"
+    services:
+      portainer:
+        network_mode: host
+        image: portainer/portainer-ce:latest
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+      registry:
+        image: registry:2
+        ports:
+          - "5000:5000"
+    ```
