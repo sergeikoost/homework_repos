@@ -39,6 +39,8 @@
 ![Задача 5-1](https://github.com/user-attachments/assets/aa580b39-952c-4c34-91a0-226e84b3016a)
 
 При запуске docker compose up -d выводятся 2 warning-а:
+
+
 WARN[0000] Found multiple config files with supported names: /tmp/netology/docker/task5/compose.yaml, /tmp/netology/docker/task5/docker-compose.yaml
 WARN[0000] Using /tmp/netology/docker/task5/compose.yaml
 
