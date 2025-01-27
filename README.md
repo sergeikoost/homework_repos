@@ -27,3 +27,7 @@
 ![Задача 3, пункты 8-12](https://github.com/user-attachments/assets/3e7ff3da-9a98-48fa-83b7-1a1f4c85f31c)
 
 Пункт 10: в пунтке 7 мы сменили порт который будет слушать nginx, это не тот порт который мы видим в выводе по команде "docker port custom-nginx-t2"
+
+Задача №4.
+
+![Задача 4](https://github.com/user-attachments/assets/f717ef26-d5e7-4cae-b87c-4197af54bea4)
