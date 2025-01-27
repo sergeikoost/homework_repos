@@ -50,7 +50,7 @@ WARN[0000] Using /tmp/netology/docker/task5/compose.yaml
 
 
 include:
-- /task5/docker-compose.yaml
+  -/task5/docker-compose.yaml
 
 
 После этого запустятся оба файла:
