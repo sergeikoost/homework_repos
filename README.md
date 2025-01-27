@@ -58,7 +58,41 @@ include:
   -/task5/docker-compose.yaml
 
 
+
+
+
+
 После этого запустятся оба файла:
 
 ![Задача 5-2](https://github.com/user-attachments/assets/277032aa-15cf-4de5-93d2-36e8ce6960f0)
+
+
+Шаг 3:
+
+![Задача 5, пункт 3](https://github.com/user-attachments/assets/d4fc5c2a-bd17-4466-befa-801d96422a04)
+
+
+Забыл сохранить скриншот и уже сделал clear в терминале, опишу что делал. 
+
+1. Сначала создаем и тегируем наш образ:
+    ```bash
+    docker pull nginx
+    docker tag nginx 127.0.0.1:5000/custom-nginx:latest
+    ```
+2. Заливаем образ в локальный реестр:
+    ```bash
+    docker push 127.0.0.1:5000/custom-nginx:latest
+    ```
+
+
+Шаг 4-6:
+
+![portainer](https://github.com/user-attachments/assets/e6723424-7e57-4b90-828b-51e997555957)
+
+
+Поскольку у меня виртуалка без GUI и браузера сделал ssh-туннель до своего ПК, ssh -L 9000:localhost:9000 root@94.131.120.58, после чего все настроил по инструкции. 
+
+Шаг 7:
+
+![Задача 5, пункт 7](https://github.com/user-attachments/assets/0f283c98-d92f-462b-8908-5e9db5673b7c)
 
