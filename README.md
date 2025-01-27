@@ -31,3 +31,15 @@
 Задача №4.
 
 ![Задача 4](https://github.com/user-attachments/assets/f717ef26-d5e7-4cae-b87c-4197af54bea4)
+
+Задача №5.
+
+Шаг 1:
+
+![Задача 5-1](https://github.com/user-attachments/assets/aa580b39-952c-4c34-91a0-226e84b3016a)
+
+При запуске docker compose up -d выводятся 2 warning-а:
+WARN[0000] Found multiple config files with supported names: /tmp/netology/docker/task5/compose.yaml, /tmp/netology/docker/task5/docker-compose.yaml
+WARN[0000] Using /tmp/netology/docker/task5/compose.yaml
+
+Запускаться будет только compose.yaml в котором не указано, что необходимо использовать еще один файл. Это можно исправить добавив в файл compose.yaml строчки...
