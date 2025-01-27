@@ -98,6 +98,9 @@ include:
 
 
 Исправил ошибку `docker compose up -d`, отредактировав файл `docker-compose.yaml`:
+
+
+
     ```yaml
     version: "3"
     services:
