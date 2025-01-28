@@ -9,26 +9,6 @@
    sudo systemctl start docker
    sudo systemctl enable docker
 
-**Установка Docker Compose**
-
-.. code-block:: bash
-
-   sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep -Po '"tag_name": "\K.*\d')" /usr/local/bin/docker-compose
-   sudo chmod +x /usr/local/bin/docker-compose
-
-**Настройка Docker с зеркалами реестра**
-
-.. code-block:: json
-
-   {
-     "registry-mirrors": ["https://mirror.gcr.io", "https://daocloud.io", "https://c.163.com/", "https://registry.docker-cn.com"]
-   }
-
-.. code-block:: bash
-
-   sudo systemctl restart docker
-
-
 **Скачивание образа nginx:1.21.1**
 
 .. code-block:: bash
