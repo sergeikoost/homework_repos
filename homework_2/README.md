@@ -1,7 +1,7 @@
-Задача 0
+## Задача 0
 
 
-Убедитесь что у вас НЕ(!) установлен docker-compose, для этого получите следующую ошибку от команды docker-compose --version
+1. Убедитесь что у вас НЕ(!) установлен ```docker-compose```, для этого получите следующую ошибку от команды ```docker-compose --version```
 
 ![homework2_task0](https://github.com/user-attachments/assets/7b862c98-c238-49dc-abf7-9bd4e0189c54)
 
@@ -9,8 +9,36 @@ docker-compose был установлен, удаляем:
 
 ![homework2_task0 1](https://github.com/user-attachments/assets/905f9ed2-75ca-4830-aac1-69212dcbf446)
 
-2. Убедитесь что у вас УСТАНОВЛЕН docker compose(без тире) версии не менее v2.24.X, для это выполните команду docker compose version
+2. Убедитесь что у вас УСТАНОВЛЕН ```docker compose```(без тире) версии не менее v2.24.X, для это выполните команду ```docker compose version```  
 
 Установка Docker Compose версии без тире (т.е. docker compose как встроенная команда, а не отдельный бинарник docker-compose) происходит автоматически при установке Docker Engine начиная с версии 20.10. В этой версии команда compose была интегрирована в основное ядро Docker. У меня docker26.1.3, устанавливать docker compose(без тире) нет необходимости. 
 
 ![homework2_task0 2](https://github.com/user-attachments/assets/bd1fb781-4ccb-473c-8bbc-f2d9676814dd)
+
+
+## Задача 1
+
+1. Сделайте в своем github пространстве fork [репозитория](https://github.com/netology-code/shvirtd-example-python/blob/main/README.md).
+   Примечание: В связи с доработкой кода python приложения. Если вы уверены что задание выполнено вами верно, а код python приложения работает с ошибкой то используйте вместо main.py файл not_tested_main.py(просто измените CMD)
+3. Создайте файл с именем ```Dockerfile.python``` для сборки данного проекта(для 3 задания изучите https://docs.docker.com/compose/compose-file/build/ ). Используйте базовый образ ```python:3.9-slim```. 
+Обязательно используйте конструкцию ```COPY . .``` в Dockerfile. Не забудьте исключить ненужные в имадже файлы с помощью dockerignore. Протестируйте корректность сборки.  
+
+# Используем базовый образ Python 3.9 slim
+FROM python:3.9-slim
+
+# Устанавливаем рабочую директорию внутри контейнера
+WORKDIR /app
+
+# Копируем все файлы из текущей директории в рабочую директорию контейнера
+COPY . .
+
+# Устанавливаем зависимости из requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Экспортируем переменные окружения для MySQL
+ENV DB_HOST=127.0.0.1 \
+    DB_USER=app \
+    DB_PASSWORD=very_strong \
+    DB_NAME=example
+
+![homework 2_task1 2](https://github.com/user-attachments/assets/a1ccab0a-7a85-4d74-857f-88eac5ffb6a6)
