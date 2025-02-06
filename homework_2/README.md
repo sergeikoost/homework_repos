@@ -20,25 +20,24 @@ docker-compose был установлен, удаляем:
 
 1. Сделайте в своем github пространстве fork [репозитория](https://github.com/netology-code/shvirtd-example-python/blob/main/README.md).
    Примечание: В связи с доработкой кода python приложения. Если вы уверены что задание выполнено вами верно, а код python приложения работает с ошибкой то используйте вместо main.py файл not_tested_main.py(просто измените CMD)
-3. Создайте файл с именем ```Dockerfile.python``` для сборки данного проекта(для 3 задания изучите https://docs.docker.com/compose/compose-file/build/ ). Используйте базовый образ ```python:3.9-slim```. 
-Обязательно используйте конструкцию ```COPY . .``` в Dockerfile. Не забудьте исключить ненужные в имадже файлы с помощью dockerignore. Протестируйте корректность сборки.  
 
-# Используем базовый образ Python 3.9 slim
-FROM python:3.9-slim
+Создание fork репозитория
+Перешел на страницу shvirtd-example-python .
+Нажал кнопку "Fork" в правом верхнем углу страницы.
+Это создаст копию репозитория в вашем пространстве GitHub.
 
-# Устанавливаем рабочую директорию внутри контейнера
-WORKDIR /app
+2. Создайте файл с именем Dockerfile.python для сборки данного проекта(для 3 задания изучите https://docs.docker.com/compose/compose-file/build/ ). Используйте базовый образ python:3.9-slim. Обязательно используйте конструкцию COPY . . в Dockerfile. Не забудьте исключить ненужные в имадже файлы с помощью dockerignore. Протестируйте корректность сборки.
 
-# Копируем все файлы из текущей директории в рабочую директорию контейнера
-COPY . .
+![homework2_task1 2 1](https://github.com/user-attachments/assets/1b1628c1-9b2e-453a-bdec-c6175f438d49)
 
-# Устанавливаем зависимости из requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
 
-# Экспортируем переменные окружения для MySQL
-ENV DB_HOST=127.0.0.1 \
-    DB_USER=app \
-    DB_PASSWORD=very_strong \
-    DB_NAME=example
+Создал mysql базу на хостовой машине, поэтому в DB_HOST=10.129.0.6, добавил туда юзера и прочее (CREATE USER 'app'@'%' IDENTIFIED BY 'very_strong';)
 
-![homework 2_task1 2](https://github.com/user-attachments/assets/a1ccab0a-7a85-4d74-857f-88eac5ffb6a6)
+Образ собрался без проблем, только немного ругался что [notice] A new release of pip is available: 23.0.1 -> 25.0
+
+![homework2_task1 2 2](https://github.com/user-attachments/assets/4b915cac-3fba-4e86-a75f-a3d607339c3e)
+
+Запустил контейнер, приложение работает но с одним но, я не смог попасть извне на внешний адрес хостовой машины, хотя HTTP запросы вижу:
+
+![homework2_task1 2 3](https://github.com/user-attachments/assets/2392489a-8cdb-46b2-9ca2-4961fa5f5ab3)
+
