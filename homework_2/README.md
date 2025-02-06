@@ -33,6 +33,12 @@ docker-compose был установлен, удаляем:
 
 Создал mysql базу на хостовой машине, поэтому в DB_HOST=10.129.0.6, добавил туда юзера и прочее (CREATE USER 'app'@'%' IDENTIFIED BY 'very_strong';)
 
+В файле .dockerignore :
+venv/ #исключаем виртуальное окружение
+__pycache__/#исключаем кэш Python
+*.pyc#исключаем скомпилированные файлы Python
+
+
 Образ собрался без проблем, только немного ругался что [notice] A new release of pip is available: 23.0.1 -> 25.0
 
 ![homework2_task1 2 2](https://github.com/user-attachments/assets/4b915cac-3fba-4e86-a75f-a3d607339c3e)
@@ -41,3 +47,7 @@ docker-compose был установлен, удаляем:
 
 ![homework2_task1 2 3](https://github.com/user-attachments/assets/2392489a-8cdb-46b2-9ca2-4961fa5f5ab3)
 
+
+## Задача 2
+
+![homework2_task2 2](https://github.com/user-attachments/assets/72a4a874-62ec-45d1-b6df-ac3fad0fce45)
