@@ -3,11 +3,12 @@
 
 1. Убедитесь что у вас НЕ(!) установлен ```docker-compose```, для этого получите следующую ошибку от команды ```docker-compose --version```
 
-![homework2_task0](https://github.com/user-attachments/assets/7b862c98-c238-49dc-abf7-9bd4e0189c54)
-
 docker-compose был установлен, удаляем:
 
-![homework2_task0 1](https://github.com/user-attachments/assets/905f9ed2-75ca-4830-aac1-69212dcbf446)
+
+![homework2_task0](https://github.com/user-attachments/assets/c73faa0e-1324-4f38-a402-908f9055df44)
+
+
 
 2. Убедитесь что у вас УСТАНОВЛЕН ```docker compose```(без тире) версии не менее v2.24.X, для это выполните команду ```docker compose version```  
 
