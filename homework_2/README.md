@@ -39,12 +39,20 @@ chmod +x ~/.docker/cli-plugins/docker-compose
 ![homework2_task1 2 1](https://github.com/user-attachments/assets/1b1628c1-9b2e-453a-bdec-c6175f438d49)
 
 
-Создал mysql базу на хостовой машине, поэтому в DB_HOST=10.129.0.6, добавил туда юзера и прочее (CREATE USER 'app'@'%' IDENTIFIED BY 'very_strong';)
+Создал mysql базу на хостовой машине т.к. базы не рекомендуется запускать в докере, поэтому в DB_HOST=10.129.0.6, добавил туда юзера и прочее:
+
+CREATE USER 'app'@'localhost' IDENTIFIED BY 'very_strong';
+GRANT ALL PRIVILEGES ON example.* TO 'app'@'localhost';
+FLUSH PRIVILEGES;
+
 
 В файле .dockerignore :
-venv/ #исключаем виртуальное окружение
-__pycache__/#исключаем кэш Python
-*.pyc#исключаем скомпилированные файлы Python
+Исключаем виртуальное окружение
+Исключаем кэш Python
+Исключаем скомпилированные файлы Python
+Исключаем логи и другие временные файлы
+
+![task1 1_dockerignore](https://github.com/user-attachments/assets/d1c39af2-5aca-4496-87ca-5e04f79cde2d)
 
 
 Образ собрался без проблем, только немного ругался что [notice] A new release of pip is available: 23.0.1 -> 25.0
