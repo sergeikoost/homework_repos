@@ -36,10 +36,10 @@ chmod +x ~/.docker/cli-plugins/docker-compose
 
 2. Создайте файл с именем Dockerfile.python для сборки данного проекта(для 3 задания изучите https://docs.docker.com/compose/compose-file/build/ ). Используйте базовый образ python:3.9-slim. Обязательно используйте конструкцию COPY . . в Dockerfile. Не забудьте исключить ненужные в имадже файлы с помощью dockerignore. Протестируйте корректность сборки.
 
-![homework2_task1 2 1](https://github.com/user-attachments/assets/1b1628c1-9b2e-453a-bdec-c6175f438d49)
+![task1 1_dockerfile](https://github.com/user-attachments/assets/780e7a80-224a-4f4a-a70d-bdec6baea863)
 
 
-Создал mysql базу на хостовой машине т.к. базы не рекомендуется запускать в докере, поэтому в DB_HOST=10.129.0.6, добавил туда юзера и прочее:
+Создал mysql базу на хостовой машине т.к. базы не рекомендуется запускать в докере, поэтому в DB_HOST=10.129.0.23, добавил туда юзера и прочее:
 
 CREATE USER 'app'@'localhost' IDENTIFIED BY 'very_strong';
 GRANT ALL PRIVILEGES ON example.* TO 'app'@'localhost';
