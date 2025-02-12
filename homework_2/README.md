@@ -62,9 +62,13 @@ FLUSH PRIVILEGES;
 
 
 
-Запустил контейнер, приложение работает но с одним но, я не смог попасть извне на внешний адрес хостовой машины, хотя HTTP запросы вижу:
+Запустил контейнер, приложение работает:
 
-![homework2_task1 2 3](https://github.com/user-attachments/assets/2392489a-8cdb-46b2-9ca2-4961fa5f5ab3)
+![task1 1_flusk2](https://github.com/user-attachments/assets/5ad1df61-3c30-4fda-8e06-e331ec446c86)
+
+![task1 1_flusk](https://github.com/user-attachments/assets/854dfcea-7bd0-4cc2-bfe3-596910c37662)
+
+
 
 
 ## Задача 2
