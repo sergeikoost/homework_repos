@@ -39,7 +39,7 @@ chmod +x ~/.docker/cli-plugins/docker-compose
 ![task1 1_dockerfile](https://github.com/user-attachments/assets/780e7a80-224a-4f4a-a70d-bdec6baea863)
 
 
-Создал mysql базу на хостовой машине т.к. базы не рекомендуется запускать в докере, поэтому в DB_HOST=10.129.0.23, добавил туда юзера и прочее:
+Создал mysql базу на хостовой машине т.к. базы не рекомендуется запускать в докере, поэтому в DB_HOST=10.129.0.23, добавил туда юзера, базу. Также пришлось изменить mysql.conf файл и внести туда bind-address = 0.0.0.0 чтобы sql слушал все интерфейсы:
 
 CREATE USER 'app'@'localhost' IDENTIFIED BY 'very_strong';
 GRANT ALL PRIVILEGES ON example.* TO 'app'@'localhost';
