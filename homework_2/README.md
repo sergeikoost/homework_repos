@@ -55,9 +55,11 @@ FLUSH PRIVILEGES;
 ![task1 1_dockerignore](https://github.com/user-attachments/assets/d1c39af2-5aca-4496-87ca-5e04f79cde2d)
 
 
-Образ собрался без проблем, только немного ругался что [notice] A new release of pip is available: 23.0.1 -> 25.0
+Собираем образ, образ собирается успешно:
 
-![homework2_task1 2 2](https://github.com/user-attachments/assets/4b915cac-3fba-4e86-a75f-a3d607339c3e)
+
+![task1 1_imagecreate](https://github.com/user-attachments/assets/29685677-14e5-4c4c-b13e-95939f1d61b7)
+
 
 Запустил контейнер, приложение работает но с одним но, я не смог попасть извне на внешний адрес хостовой машины, хотя HTTP запросы вижу:
 
