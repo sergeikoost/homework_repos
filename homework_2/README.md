@@ -58,7 +58,8 @@ FLUSH PRIVILEGES;
 Собираем образ, образ собирается успешно:
 
 
-![task1 1_imagecreate](https://github.com/user-attachments/assets/29685677-14e5-4c4c-b13e-95939f1d61b7)
+![task1 1_imagecreate](https://github.com/user-attachments/assets/9f642827-542f-4bb2-bcba-f44f9178874a)
+
 
 
 Запустил контейнер, приложение работает но с одним но, я не смог попасть извне на внешний адрес хостовой машины, хотя HTTP запросы вижу:
