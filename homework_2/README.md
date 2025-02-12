@@ -9,12 +9,19 @@ docker-compose был установлен, удаляем:
 ![homework2_task0](https://github.com/user-attachments/assets/c73faa0e-1324-4f38-a402-908f9055df44)
 
 
-
 2. Убедитесь что у вас УСТАНОВЛЕН ```docker compose```(без тире) версии не менее v2.24.X, для это выполните команду ```docker compose version```  
 
 Установка Docker Compose версии без тире (т.е. docker compose как встроенная команда, а не отдельный бинарник docker-compose) происходит автоматически при установке Docker Engine начиная с версии 20.10. В этой версии команда compose была интегрирована в основное ядро Docker. У меня docker26.1.3, устанавливать docker compose(без тире) нет необходимости. 
 
 ![homework2_task0 2](https://github.com/user-attachments/assets/bd1fb781-4ccb-473c-8bbc-f2d9676814dd)
+
+Но все же если что-то не так и не работает то можно установить плагин так:
+
+mkdir -p ~/.docker/cli-plugins/
+curl -SL https://github.com/docker/compose/releases/download/v2.27.0/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
+chmod +x ~/.docker/cli-plugins/docker-compose
+
+После чего docker compose будет работать корректно.
 
 
 ## Задача 1
