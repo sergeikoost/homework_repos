@@ -85,7 +85,7 @@ FLUSH PRIVILEGES;
 Опишите в файле compose.yaml следующие сервисы:
 
 
-Подключение proxy.yaml:
+ - Подключение proxy.yaml:
 
 version: '3.8'
 
@@ -93,7 +93,7 @@ include:
   - ./proxy.yaml
 
 
-Сервис web:
+ - Сервис web:
 
 services:
   web:
@@ -116,7 +116,7 @@ services:
       - db
 
 
-Сервис db:
+ - Сервис db:
 
   db:
     image: mysql:8
@@ -134,7 +134,8 @@ services:
     volumes:
       - ./var/lib/mysql:/var/lib/mysql
 
-Сеть:
+
+ - Сеть:
 
 networks:
   backend:
@@ -144,7 +145,7 @@ networks:
         - subnet: 172.20.0.0/24
 
 
-Общая логика в моем compose.yaml
+#Общая логика в моем compose.yaml
 Запускается контейнер db:
 
 Инициализируется MySQL. Данные сохраняются в директорию ./var/lib/mysql. MySQL слушает порт 3306 внутри контейнера и доступен на хосте через порт 3307. Также я использовал mysql на хостовой машине, базы соответсвенно там же.
