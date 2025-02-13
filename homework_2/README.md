@@ -69,8 +69,104 @@ FLUSH PRIVILEGES;
 ![task1 1_flusk](https://github.com/user-attachments/assets/854dfcea-7bd0-4cc2-bfe3-596910c37662)
 
 
+Задача
+
 
 
 ## Задача 2
 
+Все сделал согласно инструкции на yandex cloud
 ![homework2_task2 2](https://github.com/user-attachments/assets/72a4a874-62ec-45d1-b6df-ac3fad0fce45)
+
+## Задача 3
+
+
+Изучите файл "proxy.yaml"
+Создайте в репозитории с проектом файл compose.yaml. С помощью директивы "include" подключите к нему файл "proxy.yaml".
+Опишите в файле compose.yaml следующие сервисы:
+
+
+Подключение proxy.yaml:
+
+version: '3.8'
+
+include:
+  - ./proxy.yaml
+
+
+Сервис web:
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    networks:
+      backend:
+        ipv4_address: 172.20.0.5
+    restart: on-failure
+    environment:
+      DB_HOST: 172.20.0.10
+      DB_USER: root
+      DB_PASSWORD: very_strong
+      DB_NAME: example
+      DB_PORT: 3306
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
+
+Сервис db:
+
+  db:
+    image: mysql:8
+    networks:
+      backend:
+        ipv4_address: 172.20.0.10
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: very_strong
+      MYSQL_USER: app
+      MYSQL_PASSWORD: very_strong
+      MYSQL_DATABASE: example
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./var/lib/mysql:/var/lib/mysql
+
+Сеть:
+
+networks:
+  backend:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+
+
+Общая логика в моем compose.yaml
+Запускается контейнер db:
+
+Инициализируется MySQL. Данные сохраняются в директорию ./var/lib/mysql. MySQL слушает порт 3306 внутри контейнера и доступен на хосте через порт 3307. Также я использовал mysql на хостовой машине, базы соответсвенно там же.
+
+Запускается контейнер web:
+
+Собирается образ из Dockerfile.python. Приложение пытается подключиться к базе данных на хосте 172.20.0.10 который является сервисом db. Если подключение успешно, приложение начинает работать на порту 5000.
+
+![task3 1_curl](https://github.com/user-attachments/assets/5bfc9391-930f-437e-af4a-d0ce6cd96298)
+
+
+Подключитесь к БД mysql с помощью команды docker exec -ti <имя_контейнера> mysql -uroot -p<пароль root-пользователя>(обратите внимание что между ключем -u и логином root нет пробела. это важно!!! тоже самое с паролем) . Введите последовательно команды (не забываем в конце символ ; ): show databases; use <имя вашей базы данных(по-умолчанию example)>; show tables; SELECT * from requests LIMIT 10;.
+
+
+Поскольку базу я сделал локально то и проверял все я локально, если это проблема могу переделать:
+
+![task3 2_sql](https://github.com/user-attachments/assets/b3a2527c-806a-486a-85a7-99f46a0896b7)
+
+
+
+
+
+
+
