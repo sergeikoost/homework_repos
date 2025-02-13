@@ -90,7 +90,7 @@ FLUSH PRIVILEGES;
 version: '3.8'
 
 include:
-  - ./proxy.yaml
+./proxy.yaml
 
 
  - Сервис web:
