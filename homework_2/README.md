@@ -88,12 +88,15 @@ FLUSH PRIVILEGES;
  - Подключение proxy.yaml:
 
 version: '3.8'
+```
 
 include:
 ./proxy.yaml
+```
 
 
  - Сервис web:
+```
 
 services:
   web:
@@ -115,8 +118,10 @@ services:
     depends_on:
       - db
 
+```
 
  - Сервис db:
+```
 
   db:
     image: mysql:8
@@ -134,8 +139,10 @@ services:
     volumes:
       - ./var/lib/mysql:/var/lib/mysql
 
+```
 
  - Сеть:
+```
 
 networks:
   backend:
@@ -143,6 +150,7 @@ networks:
     ipam:
       config:
         - subnet: 172.20.0.0/24
+```
 
 
 #Общая логика в моем compose.yaml
