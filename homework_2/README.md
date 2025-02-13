@@ -69,7 +69,6 @@ FLUSH PRIVILEGES;
 ![task1 1_flusk](https://github.com/user-attachments/assets/854dfcea-7bd0-4cc2-bfe3-596910c37662)
 
 
-Задача
 
 
 
