@@ -226,3 +226,10 @@ docker save hashicorp/terraform -o homework2_task6.tar
 
 ![homework2_task6 2](https://github.com/user-attachments/assets/f85877fb-f374-4658-b890-3e5b67ae04b0)
 
+
+## Задача 6.1
+
+Запускаем контейнер, копируем оттуда все необходимое в локальную папку:
+
+![homework2_task6 1 1](https://github.com/user-attachments/assets/ed2aeb0a-6091-4f71-bb91-848c4ba633a9)
+
