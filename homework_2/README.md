@@ -179,7 +179,30 @@ networks:
 ![task3 2_sql](https://github.com/user-attachments/assets/b3a2527c-806a-486a-85a7-99f46a0896b7)
 
 
+## Задача 4
 
+Ссылка на репозиторий github:   https://github.com/sergeikoost/repo_homework2
+
+Написал bash скрипт:
+
+```
+REPO_URL="https://github.com/sergeikoost/repo_homework2.git"
+TARGET_DIR="/opt/repo_homework2"
+
+git clone "$REPO_URL" "$TARGET_DIR"
+
+cd "$TARGET_DIR" || exit
+
+docker compose up -d
+
+```
+
+![homework2_task4 2](https://github.com/user-attachments/assets/3fde53a8-44b6-4c2f-82c2-38d0e22e6194)
+
+
+Проект запустился, скриншот с https://check-host.net/check-http:
+
+![homework2_task4](https://github.com/user-attachments/assets/9225dfe3-13ae-488d-8524-e842019808c9)
 
 
 
