@@ -205,5 +205,24 @@ docker compose up -d
 ![homework2_task4](https://github.com/user-attachments/assets/9225dfe3-13ae-488d-8524-e842019808c9)
 
 
+## Задача 6
 
+
+Скачайте docker образ hashicorp/terraform:latest:
+
+![homework2_task6](https://github.com/user-attachments/assets/49430449-b044-4682-b9eb-325af1cfae88)
+
+Нашел где находится файл terraform при помощи dive:
+
+![homework2_task6 1](https://github.com/user-attachments/assets/1f039918-1bec-44b8-94da-9417e8977e15)
+
+digest sha256:da25c3c268493bc8d1313c7698a81a97a99c917ae09a248795e969d82cb53f65
+
+Создаем образ:
+
+docker save hashicorp/terraform -o homework2_task6.tar
+
+Распаковываем и ищем необходимый слой, как найдем распаковываем и его:
+
+![homework2_task6 2](https://github.com/user-attachments/assets/f85877fb-f374-4658-b890-3e5b67ae04b0)
 
